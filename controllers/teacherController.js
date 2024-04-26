@@ -40,9 +40,18 @@ const updateTeacher = async(req,res)=>{
     res.json({teacher: teacher})
 }
 
+const deleteTeacher = async (req,res)=>{
+
+    const teacherId = req.params.id
+    await Teacher.findByIdAndDelete(teacherId)
+
+    res.json({success: "Teacher record has been deleted successfully"})
+}
+
 module.exports= {
     allTeacher,
     getTeacher,
     addTeacher,
-    updateTeacher
+    updateTeacher,
+    deleteTeacher
 }

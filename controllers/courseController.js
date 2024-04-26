@@ -43,12 +43,19 @@ const updateCourse = async(req,res)=>{
     res.json({course: course})
 }
 
+const deleteCourse = async(req,res)=>{
 
+    const courseId = req.params.id
+    await Course.findByIdAndDelete(courseId)
+
+    res.json({success: "Course has been deleted successfully"})
+}
 
 
 module.exports = {
     allCourse,
     getCourse,
     addCourse,
-    updateCourse
+    updateCourse,
+    deleteCourse
 }

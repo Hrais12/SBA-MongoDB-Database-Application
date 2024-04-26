@@ -42,11 +42,20 @@ const updateStudent= async(req,res)=>{
     res.json({student: student})
 }
 
+const deleteStudent = async (req,res)=>{
+
+    const studentId = req.params.id
+    await Student.findByIdAndDelete(studentId)
+
+    res.json({success: "student record has been deleted successfully"})
+}
+
 
 
 module.exports= {
     allStudent,
     getStudent,
     addStudent,
-    updateStudent
+    updateStudent,
+    deleteStudent
 }
