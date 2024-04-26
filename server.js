@@ -18,7 +18,24 @@ app.use(cors());
 
 const Teacher=require("./models/teacher.js");
 const Student = require("./models/student");
-const Course = require("./models/course")
+const Course = require("./models/course");
+
+const teacherController = require("./controllers/teacherController.js");
+const studentController = require("./controllers/studentController.js");
+const courseController = require("./controllers/courseController.js")
+
+// Teacher CRUD routes
+app.get("/teacher", teacherController.allTeacher);
+
+
+// Student CRUD routes
+app.get("/student", studentController.allStudent);
+
+
+// course CRUD routes
+app. get ("/course", courseController.allCourse);
+
+
 
 app.listen(PORT, () => {
     console.log(`Express Server Listening on port num: ${PORT}`);
