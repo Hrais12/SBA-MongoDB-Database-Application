@@ -16,9 +16,22 @@ const getStudent = async (req,res)=>{
     res.json({student: student})
 }
 
+const addStudent= async(req,res)=>{
+
+    const {name,teacher,grade} = req.body
+    const student = await Student.create({
+        name : name,
+        teacher: teacher,
+        grade: grade
+    })
+
+    res.json({student: student})
+}
+
 
 
 module.exports= {
     allStudent,
-    getStudent
+    getStudent,
+    addStudent
 }

@@ -27,17 +27,19 @@ const courseController = require("./controllers/courseController.js")
 // Teacher CRUD routes
 app.get("/teacher", teacherController.allTeacher);
 app.get("/teacher/:id", teacherController.getTeacher);
-
+app.post("/teacher", teacherController.addTeacher);
 
 
 // Student CRUD routes
 app.get("/student", studentController.allStudent);
 app.get("/student/:id", studentController.getStudent);
+app.post("/student", studentController.addStudent)
 
 
 // course CRUD routes
 app. get ("/course", courseController.allCourse);
 app. get ("/course/;id", courseController.getCourse);
+app.post("/course/;id", courseController.addCourse)
 
 
 

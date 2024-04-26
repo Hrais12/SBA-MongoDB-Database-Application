@@ -16,9 +16,22 @@ const getCourse = async(req,res)=>{
     res.json({course: course})
 }
 
+const addCourse = async(req,res)=>{
+
+    const {name,teacher,room} = req.body
+    const course = await Course.create({
+        name : name,
+        teacher: teacher,
+        room: room
+    })
+
+    res.json({course: course})
+}
+
 
 
 module.exports = {
     allCourse,
-    getCourse
+    getCourse,
+    addCourse
 }
