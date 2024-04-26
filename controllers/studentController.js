@@ -8,5 +8,17 @@ const allStudent = async (req,res)=>{
 }
 
 
+const getStudent = async (req,res)=>{
 
-module.exports= {allStudent}
+    const studentId = req.params.id
+    const student = await Student.findById(studentId)
+
+    res.json({student: student})
+}
+
+
+
+module.exports= {
+    allStudent,
+    getStudent
+}

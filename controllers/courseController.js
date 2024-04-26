@@ -8,4 +8,17 @@ const allCourse = async(req,res)=>{
 }
 
 
-module.exports = {allCourse}
+const getCourse = async(req,res)=>{
+
+    const courseId = req.params.id
+    const course = await Course.findById(courseId)
+
+    res.json({course: course})
+}
+
+
+
+module.exports = {
+    allCourse,
+    getCourse
+}

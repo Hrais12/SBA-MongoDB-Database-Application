@@ -26,14 +26,18 @@ const courseController = require("./controllers/courseController.js")
 
 // Teacher CRUD routes
 app.get("/teacher", teacherController.allTeacher);
+app.get("/teacher/:id", teacherController.getTeacher);
+
 
 
 // Student CRUD routes
 app.get("/student", studentController.allStudent);
+app.get("/student/:id", studentController.getStudent);
 
 
 // course CRUD routes
 app. get ("/course", courseController.allCourse);
+app. get ("/course/;id", courseController.getCourse);
 
 
 

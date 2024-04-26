@@ -6,5 +6,16 @@ const allTeacher = async (req,res)=>{
     res.json({teacher: teacher})
 }
 
+const getTeacher = async (req,res)=>{
 
-module.exports= {allTeacher}
+    const teacherId = req.params.id
+    const teacher = await Teacher.findById(teacherId)
+
+    res.json({teacher: teacher})
+}
+
+
+module.exports= {
+    allTeacher,
+    getTeacher
+}
