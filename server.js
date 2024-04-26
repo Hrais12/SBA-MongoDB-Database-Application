@@ -16,7 +16,9 @@ app.use(express.json());
 app.use(cors());
 
 
-
+const Teacher=require("./models/teacher.js");
+const Student = require("./models/student");
+const Course = require("./models/course")
 
 app.listen(PORT, () => {
     console.log(`Express Server Listening on port num: ${PORT}`);
