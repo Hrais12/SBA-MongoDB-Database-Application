@@ -17,7 +17,21 @@ const getTeacher = async (req,res)=>{
 const addTeacher = async(req,res)=>{
 
     const {name,subject,room} = req.body
-    const teacher = await Course.create({
+    const teacher = await Teacher.create({
+        name : name,
+        subject: subject,
+        room: room
+    })
+
+    res.json({teacher: teacher})
+}
+
+const updateTeacher = async(req,res)=>{
+
+    const teacherId = req.params.id
+
+    const {name,subject,room} = req.body
+    const teacher = await Teacher.findByIdandUpdate(teacherId,{
         name : name,
         subject: subject,
         room: room
@@ -29,5 +43,6 @@ const addTeacher = async(req,res)=>{
 module.exports= {
     allTeacher,
     getTeacher,
-    addTeacher
+    addTeacher,
+    updateTeacher
 }

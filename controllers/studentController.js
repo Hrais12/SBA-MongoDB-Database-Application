@@ -28,10 +28,25 @@ const addStudent= async(req,res)=>{
     res.json({student: student})
 }
 
+const updateStudent= async(req,res)=>{
+
+    const studentId = req.params.id
+
+    const {name,teacher,grade} = req.body
+    const student = await Student.findByIdAndUpdate(studentId,{
+        name : name,
+        teacher: teacher,
+        grade: grade
+    })
+
+    res.json({student: student})
+}
+
 
 
 module.exports= {
     allStudent,
     getStudent,
-    addStudent
+    addStudent,
+    updateStudent
 }

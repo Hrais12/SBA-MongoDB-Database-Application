@@ -29,9 +29,26 @@ const addCourse = async(req,res)=>{
 }
 
 
+const updateCourse = async(req,res)=>{
+
+    const courseId = req.params.id
+
+    const {name,teacher,room} = req.body
+    const course = await Course.findByIdAndUpdate(courseId,{
+        name : name,
+        teacher: teacher,
+        room: room
+    })
+
+    res.json({course: course})
+}
+
+
+
 
 module.exports = {
     allCourse,
     getCourse,
-    addCourse
+    addCourse,
+    updateCourse
 }
