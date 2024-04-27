@@ -35,7 +35,7 @@ const updateTeacher = async(req,res)=>{
         name : name,
         subject: subject,
         room: room
-    })
+    },{new:true})
 
     res.json({teacher: teacher})
 }

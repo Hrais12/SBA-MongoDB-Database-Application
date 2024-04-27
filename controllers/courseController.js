@@ -38,7 +38,7 @@ const updateCourse = async(req,res)=>{
         name : name,
         teacher: teacher,
         room: room
-    })
+    },{new:true})
 
     res.json({course: course})
 }

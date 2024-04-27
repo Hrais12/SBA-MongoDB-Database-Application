@@ -37,7 +37,7 @@ const updateStudent= async(req,res)=>{
         name : name,
         teacher: teacher,
         grade: grade
-    })
+    },{new:true})
 
     res.json({student: student})
 }
